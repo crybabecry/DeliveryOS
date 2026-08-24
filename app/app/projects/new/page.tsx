@@ -1,0 +1,5 @@
+import { createProject } from "./actions";
+export default async function NewProjectPage({ searchParams }: { searchParams: Promise<{ error?: string }> }) {
+  const params = await searchParams;
+  return <div className="content narrow"><div style={{marginBottom:22}}><h1 className="page-title">New project</h1><p className="page-subtitle">Create the workspace in which requirements, documents, evidence and acceptance will be tracked.</p></div><div className="card">{params.error ? <div className="notice notice-error">{params.error}</div> : null}<form className="form" action={createProject}><label>Project name<input name="name" required maxLength={200} placeholder="Product Alpha" /></label><label>Project code<input name="code" required maxLength={80} placeholder="PRJ-001" /></label><label>Description<textarea name="description" rows={4} /></label><label>Target delivery date<input name="targetDeliveryDate" type="date" /></label><button className="btn btn-primary">Create project</button></form></div></div>;
+}

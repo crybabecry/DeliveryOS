@@ -1,0 +1,9 @@
+{
+  "case": "sample-001",
+  "description": "Synthetic manufacturing contract for evaluator development",
+  "expected": {
+    "requirements": { "min": 3, "max": 6 },
+    "source_pages_required": true,
+    "invented_deadlines_allowed": false
+  }
+}
